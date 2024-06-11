@@ -1,12 +1,16 @@
-// Packages //
+// Imports/Packages //
+import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:lamia_discover/main.dart';
 
 // Main //
 void main() {
   runApp(const FigmaToCodeApp());
 }
 
-// Classes //
+// Core //
 class FigmaToCodeApp extends StatelessWidget {
   const FigmaToCodeApp({super.key});
 
@@ -17,7 +21,7 @@ class FigmaToCodeApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
       home: Scaffold(
-        body: ListView(children: [
+        body: ListView(children: const [
           SignUp(),
         ]),
       ),
@@ -26,6 +30,8 @@ class FigmaToCodeApp extends StatelessWidget {
 }
 
 class SignUp extends StatelessWidget {
+  const SignUp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,7 +41,7 @@ class SignUp extends StatelessWidget {
           height: 812,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               begin: Alignment(0.00, -1.00),
               end: Alignment(0, 1),
               colors: [Color(0xFF46238C), Color(0xFF999999)],
@@ -51,120 +57,125 @@ class SignUp extends StatelessWidget {
                 top: 568,
                 width: 100,
                 height: 100,
-                child: Image.asset("assets/images/SignUp/Google.png"),
+                child: Image.asset("assets/images/Start/Google.png"),
               ),
               Positioned(
                 left: 50,
                 top: 620,
                 width: 100,
                 height: 100,
-                child: Image.asset("assets/images/SignUp/Facebook.png"),
+                child: Image.asset("assets/images/Start/Facebook.png"),
               ),
               Positioned(
                 left: 5,
                 top: 40,
                 width: 100,
                 height: 100,
-                child: Image.asset("assets/images/SignUp/BackArrow.png"),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FirstPage()),
+                    );
+                  },
+                  child: Image.asset("assets/images/Start/BackArrow.png"),
+                ),
               ),
               Positioned(
                 left: 15,
                 top: 555,
-                child: Container(
+                child: SizedBox(
                   width: 345,
                   height: 210,
                   child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         left: 51,
                         top: 185,
                         child: SizedBox(
                           width: 244,
                           height: 25,
-                          child: Text.rich(
-                            TextSpan(
+                          child: DefaultTextStyle(
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w400,
+                              height: 0.11,
+                            ),
+                            child: Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: 'Already have an account?',
+                                  ),
+                                  TextSpan(
+                                    text: '  ',
+                                    style: TextStyle(
+                                      color: Color(0xFF110C26),
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: 'Sign In',
+                                    style: TextStyle(
+                                      color: Color(0xFF46238C),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Positioned(
+                        left: 70,
+                        top: 110,
+                        child: SizedBox(
+                          width: 206,
+                          height: 36,
+                          child: DefaultTextStyle(
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w400,
+                              height: 0.10,
+                            ),
+                            child: Stack(
                               children: [
-                                TextSpan(
-                                  text: 'Already have an account?',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0.11,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: '  ',
-                                  style: TextStyle(
-                                    color: Color(0xFF110C26),
-                                    fontSize: 15,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0.11,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: 'Sign In',
-                                  style: TextStyle(
-                                    color: Color(0xFF46238C),
-                                    fontSize: 15,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0.11,
+                                Positioned(
+                                  left: 39,
+                                  top: 10,
+                                  child: Text(
+                                    'Sign In with Facebook',
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
                               ],
                             ),
-                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-                      Positioned(
-                        left: 70,
-                        top: 110,
-                        child: Container(
-                          width: 206,
-                          height: 36,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 39,
-                                top: 5,
-                                child: Text(
-                                  'Sign In with Facebook',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0.10,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Positioned(
+                      const Positioned(
                         left: 75,
                         top: 60,
-                        child: Container(
+                        child: SizedBox(
                           width: 182,
                           height: 27,
                           child: Stack(
                             children: [
                               Positioned(
                                 left: 35,
-                                top: 1,
+                                top: 3,
                                 child: Text(
                                   'Sign In with Google',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.white,
+                                    decoration: TextDecoration.none,
                                     fontSize: 16,
-                                    fontFamily: 'Inter',
+                                    fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w400,
                                     height: 0.10,
                                   ),
@@ -181,7 +192,7 @@ class SignUp extends StatelessWidget {
                           transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(3.14),
                           child: Container(
                             width: 150,
-                            decoration: ShapeDecoration(
+                            decoration: const ShapeDecoration(
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                   width: 1,
@@ -193,7 +204,7 @@ class SignUp extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         left: 161,
                         top: 16,
                         child: Text(
@@ -201,8 +212,9 @@ class SignUp extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white,
+                            decoration: TextDecoration.none,
                             fontSize: 16,
-                            fontFamily: 'Inter',
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                             height: 0.12,
                           ),
@@ -215,7 +227,7 @@ class SignUp extends StatelessWidget {
                           transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(3.14),
                           child: Container(
                             width: 150,
-                            decoration: ShapeDecoration(
+                            decoration: const ShapeDecoration(
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                   width: 1,
@@ -234,7 +246,7 @@ class SignUp extends StatelessWidget {
               Positioned(
                 left: 24,
                 top: 165,
-                child: Container(
+                child: SizedBox(
                   width: 327,
                   height: 373,
                   child: Stack(
@@ -247,11 +259,11 @@ class SignUp extends StatelessWidget {
                           height: 50,
                           padding: const EdgeInsets.symmetric(horizontal: 60),
                           decoration: ShapeDecoration(
-                            color: Color(0xFF46238C),
+                            color: const Color(0xFF46238C),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40),
                             ),
-                            shadows: [
+                            shadows: const [
                               BoxShadow(
                                 color: Color(0x3F000000),
                                 blurRadius: 4,
@@ -260,7 +272,7 @@ class SignUp extends StatelessWidget {
                               )
                             ],
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -269,8 +281,9 @@ class SignUp extends StatelessWidget {
                                 'Sign Up',
                                 style: TextStyle(
                                   color: Colors.white,
+                                  decoration: TextDecoration.none,
                                   fontSize: 20,
-                                  fontFamily: 'Inter',
+                                  fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w500,
                                   height: 0.07,
                                 ),
@@ -282,7 +295,7 @@ class SignUp extends StatelessWidget {
                       Positioned(
                         left: 0,
                         top: 265,
-                        child: Container(
+                        child: SizedBox(
                           width: 327,
                           height: 40,
                           child: Stack(
@@ -297,11 +310,11 @@ class SignUp extends StatelessWidget {
                                   decoration: ShapeDecoration(
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(
-                                      side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                                      side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                                       borderRadius: BorderRadius.circular(100),
                                     ),
                                   ),
-                                  child: Row(
+                                  child: const Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -312,8 +325,9 @@ class SignUp extends StatelessWidget {
                                             'Password',
                                             style: TextStyle(
                                               color: Color(0xFF828282),
+                                              decoration: TextDecoration.none,
                                               fontSize: 14,
-                                              fontFamily: 'Inter',
+                                              fontFamily: 'Poppins',
                                               fontWeight: FontWeight.w400,
                                               height: 0.10,
                                             ),
@@ -338,11 +352,11 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -353,8 +367,9 @@ class SignUp extends StatelessWidget {
                                     'Username',
                                     style: TextStyle(
                                       color: Color(0xFF828282),
+                                      decoration: TextDecoration.none,
                                       fontSize: 14,
-                                      fontFamily: 'Inter',
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w400,
                                       height: 0.10,
                                     ),
@@ -375,11 +390,11 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -390,8 +405,9 @@ class SignUp extends StatelessWidget {
                                     'Last Name',
                                     style: TextStyle(
                                       color: Color(0xFF828282),
+                                      decoration: TextDecoration.none,
                                       fontSize: 14,
-                                      fontFamily: 'Inter',
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w400,
                                       height: 0.10,
                                     ),
@@ -412,11 +428,11 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -427,8 +443,9 @@ class SignUp extends StatelessWidget {
                                     'First Name',
                                     style: TextStyle(
                                       color: Color(0xFF828282),
+                                      decoration: TextDecoration.none,
                                       fontSize: 14,
-                                      fontFamily: 'Inter',
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w400,
                                       height: 0.10,
                                     ),
@@ -449,11 +466,11 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -464,8 +481,9 @@ class SignUp extends StatelessWidget {
                                     'Email Address',
                                     style: TextStyle(
                                       color: Color(0xFF828282),
+                                      decoration: TextDecoration.none,
                                       fontSize: 14,
-                                      fontFamily: 'Inter',
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w400,
                                       height: 0.10,
                                     ),
@@ -476,7 +494,7 @@ class SignUp extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         left: 7,
                         top: 0,
                         child: Text(
@@ -484,8 +502,9 @@ class SignUp extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white,
+                            decoration: TextDecoration.none,
                             fontSize: 24,
-                            fontFamily: 'Inter',
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                             height: 0.07,
                             letterSpacing: -0.32,

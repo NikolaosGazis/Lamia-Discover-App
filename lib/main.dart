@@ -1,12 +1,13 @@
-// Packages //
-import 'package:flutter/material.dart';
 
-// Main //
+// Imports/Packages //
+import 'package:flutter/material.dart';
+import 'features/start/signup.dart';
+import 'features/start/signin.dart';
+
 void main() {
   runApp(const FigmaToCodeApp());
 }
 
-// Classes //
 class FigmaToCodeApp extends StatelessWidget {
   const FigmaToCodeApp({super.key});
 
@@ -16,46 +17,45 @@ class FigmaToCodeApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
-      home: Scaffold(
-        body: ListView(children: [
-          FirstPage(),
-        ]),
-      ),
+      home: const FirstPage(),
     );
   }
 }
 
 class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
+    return Scaffold(
+      body: Center(
+        child: Container(
           width: 375,
           height: 812,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
-            gradient: LinearGradient(
-              begin: Alignment(0.00, -1.00),
-              end: Alignment(0, 1),
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               colors: [Color(0xFF22878E), Color(0xFF999999)],
             ),
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 10),
               borderRadius: BorderRadius.circular(45),
             ),
           ),
           child: Stack(
             children: [
               Positioned(
-                left: 118,
+                left: 135,
                 top: 100,
-                width: 100,
-                height: 100,
-                child: Image.asset("assets/images/FirstPage/Logo.png"),
+                child: Image.asset(
+                  "assets/images/Start/Logo.png",
+                  width: 100,
+                  height: 100,
+                ),
               ),
-              Positioned(
-                left: 35,
+              const Positioned(
+                left: 50,
                 top: 500,
                 child: SizedBox(
                   width: 280,
@@ -75,87 +75,31 @@ class FirstPage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 75,
+                left: 90,
                 top: 405,
-                child: Container(
-                  width: 200,
-                  height: 50,
-                  padding: const EdgeInsets.symmetric(horizontal: 60),
-                  decoration: ShapeDecoration(
-                    color: Color(0xFF146F95),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Row( // Sign Up.
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                          height: 0.08,
-                        ),
-                      ),
-                    ],
+                child: _buildButton(
+                  context,
+                  'Sign Up',
+                      () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUp()),
                   ),
                 ),
               ),
               Positioned(
-                left: 75,
+                left: 90,
                 top: 335,
-                child: Container(
-                  width: 200,
-                  height: 50,
-                  padding: const EdgeInsets.symmetric(horizontal: 60),
-                  decoration: ShapeDecoration(
-                    color: Color(0xFF146F95),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text( // Sign In.
-                        'Sign In',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                          height: 0.08,
-                        ),
-                      ),
-                    ],
+                child: _buildButton(
+                  context,
+                  'Sign In',
+                      () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignIn()),
                   ),
                 ),
               ),
-              Positioned( // Text
-                left: -90,
+              const Positioned(
+                left: -70,
                 top: 270,
                 child: SizedBox(
                   width: 521,
@@ -176,7 +120,44 @@ class FirstPage extends StatelessWidget {
             ],
           ),
         ),
-      ],
+      ),
+    );
+  }
+
+  Widget _buildButton(BuildContext context, String text, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 200,
+        height: 50,
+        padding: const EdgeInsets.symmetric(horizontal: 60),
+        decoration: ShapeDecoration(
+          color: const Color(0xFF146F95),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+          shadows: [
+            BoxShadow(
+              color: const Color(0x3F000000),
+              blurRadius: 4,
+              offset: const Offset(0, 4),
+              spreadRadius: 0,
+            ),
+          ],
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
+              height: 1.0,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
