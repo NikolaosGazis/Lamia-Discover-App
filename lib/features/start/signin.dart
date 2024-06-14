@@ -1,12 +1,16 @@
 // Imports/Packages //
 import 'package:flutter/material.dart';
 import 'package:lamia_discover/main.dart';
+import 'signup.dart';
+import 'forgotpassword.dart';
 import 'package:lamia_discover/features/welcome/back.dart';
 
+// Main //
 void main() {
   runApp(const FigmaToCodeApp());
 }
 
+// Core //
 class FigmaToCodeApp extends StatelessWidget {
   const FigmaToCodeApp({super.key});
 
@@ -285,7 +289,7 @@ class SignIn extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => WelcomeBack()),
+                              MaterialPageRoute(builder: (context) => const WelcomeBack()),
                             );
                           },
                           child: Container(
@@ -347,7 +351,7 @@ class SignIn extends StatelessWidget {
                                     fontSize: 14,
                                     fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w400,
-                                    height: 0.12,
+                                    height: 1,
                                   ),
                                 ),
                               ),
@@ -401,30 +405,32 @@ class SignIn extends StatelessWidget {
                           height: 80,
                           child: Stack(
                             children: [
-                              const Positioned(
+                              Positioned(
                                 left: 210,
                                 top: 64,
                                 child: SizedBox(
                                   width: 160,
                                   height: 16,
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        left: 0,
-                                        top: 6,
-                                        child: Text(
-                                          'Forgot Password?',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            decoration: TextDecoration.none,
-                                            fontSize: 14,
-                                            fontFamily: 'Poppins',
-                                            fontWeight: FontWeight.w400,
-                                            height: 0.08,
-                                          ),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => const ForgotPassword(),
                                         ),
+                                      );
+                                    },
+                                    child: const Text(
+                                      'Forgot Password?',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        decoration: TextDecoration.none,
+                                        fontSize: 14,
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w400,
+                                        height: 1,
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ),

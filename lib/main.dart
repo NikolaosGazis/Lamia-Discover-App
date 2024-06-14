@@ -1,13 +1,14 @@
-
 // Imports/Packages //
 import 'package:flutter/material.dart';
 import 'features/start/signup.dart';
 import 'features/start/signin.dart';
 
+// Main //
 void main() {
   runApp(const FigmaToCodeApp());
 }
 
+// Core //
 class FigmaToCodeApp extends StatelessWidget {
   const FigmaToCodeApp({super.key});
 
@@ -82,7 +83,7 @@ class FirstPage extends StatelessWidget {
                   'Sign Up',
                       () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignUp()),
+                    MaterialPageRoute(builder: (context) => const SignUp()),
                   ),
                 ),
               ),
@@ -94,7 +95,7 @@ class FirstPage extends StatelessWidget {
                   'Sign In',
                       () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignIn()),
+                    MaterialPageRoute(builder: (context) => const SignIn()),
                   ),
                 ),
               ),
@@ -136,11 +137,11 @@ class FirstPage extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
           ),
-          shadows: [
+          shadows: const [
             BoxShadow(
-              color: const Color(0x3F000000),
+              color: Color(0x3F000000),
               blurRadius: 4,
-              offset: const Offset(0, 4),
+              offset: Offset(0, 4),
               spreadRadius: 0,
             ),
           ],

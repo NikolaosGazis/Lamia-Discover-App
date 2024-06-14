@@ -15,7 +15,7 @@ class FigmaToCodeApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
       home: Scaffold(
-        body: ListView(children: [
+        body: ListView(children: const [
           SignIn(),
         ]),
       ),
@@ -24,6 +24,8 @@ class FigmaToCodeApp extends StatelessWidget {
 }
 
 class SignIn extends StatelessWidget {
+  const SignIn({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,7 +35,7 @@ class SignIn extends StatelessWidget {
           height: 812,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               begin: Alignment(0.00, -1.00),
               end: Alignment(0, 1),
               colors: [Color(0xFF46238C), Color(0xFF999999)],
@@ -68,12 +70,12 @@ class SignIn extends StatelessWidget {
               Positioned(
                 left: 73,
                 top: 615,
-                child: Container(
+                child: SizedBox(
                   width: 230,
                   height: 150,
                   child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         left: 0,
                         top: 125,
                         child: Text.rich(
@@ -117,12 +119,12 @@ class SignIn extends StatelessWidget {
                       Positioned(
                         left: 14,
                         top: 50,
-                        child: Container(
+                        child: SizedBox(
                           width: 206,
                           height: 36,
                           child: Stack(
                             children: [
-                              Positioned(
+                              const Positioned(
                                 left: 39,
                                 top: 5,
                                 child: Text(
@@ -143,7 +145,7 @@ class SignIn extends StatelessWidget {
                                 child: Container(
                                   width: 36,
                                   height: 36,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/36x36"),
                                       fit: BoxFit.contain,
@@ -158,12 +160,12 @@ class SignIn extends StatelessWidget {
                       Positioned(
                         left: 17,
                         top: 0,
-                        child: Container(
+                        child: SizedBox(
                           width: 182,
                           height: 27,
                           child: Stack(
                             children: [
-                              Positioned(
+                              const Positioned(
                                 left: 35,
                                 top: 1,
                                 child: Text(
@@ -184,7 +186,7 @@ class SignIn extends StatelessWidget {
                                 child: Container(
                                   width: 27,
                                   height: 27,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/27x27"),
                                       fit: BoxFit.contain,
@@ -207,7 +209,7 @@ class SignIn extends StatelessWidget {
                   transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(3.14),
                   child: Container(
                     width: 150,
-                    decoration: ShapeDecoration(
+                    decoration: const ShapeDecoration(
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
                           width: 1,
@@ -219,7 +221,7 @@ class SignIn extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 176,
                 top: 555,
                 child: Text(
@@ -241,7 +243,7 @@ class SignIn extends StatelessWidget {
                   transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(3.14),
                   child: Container(
                     width: 150,
-                    decoration: ShapeDecoration(
+                    decoration: const ShapeDecoration(
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
                           width: 1,
@@ -256,7 +258,7 @@ class SignIn extends StatelessWidget {
               Positioned(
                 left: 24,
                 top: 243,
-                child: Container(
+                child: SizedBox(
                   width: 327,
                   height: 277,
                   child: Stack(
@@ -269,11 +271,11 @@ class SignIn extends StatelessWidget {
                           height: 50,
                           padding: const EdgeInsets.symmetric(horizontal: 60),
                           decoration: ShapeDecoration(
-                            color: Color(0xFF46238C),
+                            color: const Color(0xFF46238C),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40),
                             ),
-                            shadows: [
+                            shadows: const [
                               BoxShadow(
                                 color: Color(0x3F000000),
                                 blurRadius: 4,
@@ -282,7 +284,7 @@ class SignIn extends StatelessWidget {
                               )
                             ],
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -304,12 +306,12 @@ class SignIn extends StatelessWidget {
                       Positioned(
                         left: 8,
                         top: 177,
-                        child: Container(
+                        child: SizedBox(
                           width: 136,
                           height: 23,
                           child: Stack(
                             children: [
-                              Positioned(
+                              const Positioned(
                                 left: 39,
                                 top: 0,
                                 child: Text(
@@ -327,7 +329,7 @@ class SignIn extends StatelessWidget {
                               Positioned(
                                 left: 0,
                                 top: 2,
-                                child: Container(
+                                child: SizedBox(
                                   width: 32.30,
                                   height: 19,
                                   child: Stack(
@@ -339,7 +341,7 @@ class SignIn extends StatelessWidget {
                                           width: 32.30,
                                           height: 19,
                                           decoration: ShapeDecoration(
-                                            color: Color(0xFF46238C),
+                                            color: const Color(0xFF46238C),
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(95),
                                             ),
@@ -352,7 +354,7 @@ class SignIn extends StatelessWidget {
                                         child: Container(
                                           width: 15.20,
                                           height: 15.20,
-                                          decoration: ShapeDecoration(
+                                          decoration: const ShapeDecoration(
                                             color: Colors.white,
                                             shape: OvalBorder(),
                                           ),
@@ -369,15 +371,15 @@ class SignIn extends StatelessWidget {
                       Positioned(
                         left: 0,
                         top: 118,
-                        child: Container(
+                        child: SizedBox(
                           width: 327,
                           height: 80,
                           child: Stack(
                             children: [
-                              Positioned(
+                              const Positioned(
                                 left: 210,
                                 top: 64,
-                                child: Container(
+                                child: SizedBox(
                                   width: 117,
                                   height: 16,
                                   child: Stack(
@@ -407,8 +409,8 @@ class SignIn extends StatelessWidget {
                                   width: 24,
                                   height: 24,
                                   clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(),
-                                  child: FlutterLogo(),
+                                  decoration: const BoxDecoration(),
+                                  child: const FlutterLogo(),
                                 ),
                               ),
                               Positioned(
@@ -421,11 +423,11 @@ class SignIn extends StatelessWidget {
                                   decoration: ShapeDecoration(
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(
-                                      side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                                      side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                                       borderRadius: BorderRadius.circular(100),
                                     ),
                                   ),
-                                  child: Row(
+                                  child: const Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -444,7 +446,7 @@ class SignIn extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(width: 16),
+                                      SizedBox(width: 16),
                                     ],
                                   ),
                                 ),
@@ -463,11 +465,11 @@ class SignIn extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -490,7 +492,7 @@ class SignIn extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         left: 9,
                         top: 0,
                         child: Text(
@@ -528,7 +530,7 @@ class SignIn extends StatelessWidget {
                       Container(
                         height: 127.50,
                         decoration: ShapeDecoration(
-                          color: Color(0xBF1E1E1E),
+                          color: const Color(0xBF1E1E1E),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14),
                           ),
@@ -543,8 +545,8 @@ class SignIn extends StatelessWidget {
                               height: 92,
                               padding: const EdgeInsets.all(16),
                               clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(),
-                              child: Column(
+                              decoration: const BoxDecoration(),
+                              child: const Column(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -564,7 +566,7 @@ class SignIn extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(height: 35),
+                                  SizedBox(height: 35),
                                   SizedBox(
                                     width: double.infinity,
                                     child: Text(
@@ -586,13 +588,13 @@ class SignIn extends StatelessWidget {
                             Container(
                               width: double.infinity,
                               height: 0.50,
-                              decoration: BoxDecoration(color: Color(0x5B3C3C43)),
+                              decoration: const BoxDecoration(color: Color(0x5B3C3C43)),
                             ),
                             Container(
                               width: double.infinity,
                               height: 35,
                               padding: const EdgeInsets.symmetric(horizontal: 41, vertical: 11),
-                              child: Column(
+                              child: const Column(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,

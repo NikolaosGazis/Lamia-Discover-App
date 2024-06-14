@@ -15,7 +15,7 @@ class FigmaToCodeApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: ListView(
-          children: [
+          children: const [
             BattleOfThermopylae(),
           ],
         ),
@@ -25,17 +25,19 @@ class FigmaToCodeApp extends StatelessWidget {
 }
 
 class BattleOfThermopylae extends StatelessWidget {
+  const BattleOfThermopylae({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         GradientContainer(
           child: Stack(
             children: [
-              const TopImage(),
-              const WhiteBackground(),
-              const DescriptionContainer(),
-              const TopIcons(),
+              TopImage(),
+              WhiteBackground(),
+              DescriptionContainer(),
+              TopIcons(),
             ],
           ),
         ),
@@ -46,7 +48,7 @@ class BattleOfThermopylae extends StatelessWidget {
 
 class GradientContainer extends StatelessWidget {
   final Widget child;
-  const GradientContainer({required this.child});
+  const GradientContainer({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,7 @@ class GradientContainer extends StatelessWidget {
 }
 
 class TopImage extends StatelessWidget {
-  const TopImage();
+  const TopImage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +83,7 @@ class TopImage extends StatelessWidget {
         width: 398,
         height: 373,
         decoration: ShapeDecoration(
-          image: DecorationImage(
+          image: const DecorationImage(
             image: NetworkImage("https://via.placeholder.com/398x373"),
             fit: BoxFit.fill,
           ),
@@ -95,7 +97,7 @@ class TopImage extends StatelessWidget {
 }
 
 class WhiteBackground extends StatelessWidget {
-  const WhiteBackground();
+  const WhiteBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -117,14 +119,14 @@ class WhiteBackground extends StatelessWidget {
 }
 
 class DescriptionContainer extends StatelessWidget {
-  const DescriptionContainer();
+  const DescriptionContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return const Positioned(
       left: -23,
       top: 373,
-      child: Container(
+      child: SizedBox(
         width: 383,
         height: 412,
         child: Stack(
@@ -183,8 +185,8 @@ class DescriptionContainer extends StatelessWidget {
                 ),
               ),
             ),
-            const DividerLine(),
-            const DescriptionTitle(),
+            DividerLine(),
+            DescriptionTitle(),
           ],
         ),
       ),
@@ -193,7 +195,7 @@ class DescriptionContainer extends StatelessWidget {
 }
 
 class DividerLine extends StatelessWidget {
-  const DividerLine();
+  const DividerLine({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -204,7 +206,7 @@ class DividerLine extends StatelessWidget {
         opacity: 0.72,
         child: Container(
           width: 383,
-          decoration: ShapeDecoration(
+          decoration: const ShapeDecoration(
             shape: RoundedRectangleBorder(
               side: BorderSide(
                 width: 1,
@@ -219,11 +221,11 @@ class DividerLine extends StatelessWidget {
 }
 
 class DescriptionTitle extends StatelessWidget {
-  const DescriptionTitle();
+  const DescriptionTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return const Positioned(
       left: 55,
       top: 0,
       child: Text(
@@ -241,24 +243,24 @@ class DescriptionTitle extends StatelessWidget {
 }
 
 class TopIcons extends StatelessWidget {
-  const TopIcons();
+  const TopIcons({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return const Positioned(
       left: 32,
       top: 70,
-      child: Container(
+      child: SizedBox(
         width: 312,
         height: 30,
         child: Stack(
           children: [
-            const Positioned(
+            Positioned(
               left: 285,
               top: 0,
               child: IconWithShadow(),
             ),
-            const Positioned(
+            Positioned(
               left: 0,
               top: 4,
               child: SmallIcon(),
@@ -271,14 +273,14 @@ class TopIcons extends StatelessWidget {
 }
 
 class IconWithShadow extends StatelessWidget {
-  const IconWithShadow();
+  const IconWithShadow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 27,
       height: 27,
-      decoration: ShapeDecoration(
+      decoration: const ShapeDecoration(
         color: Colors.white,
         shape: OvalBorder(),
         shadows: [
@@ -315,7 +317,7 @@ class IconWithShadow extends StatelessWidget {
 }
 
 class SmallIcon extends StatelessWidget {
-  const SmallIcon();
+  const SmallIcon({super.key});
 
   @override
   Widget build(BuildContext context) {

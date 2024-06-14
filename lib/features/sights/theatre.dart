@@ -1,7 +1,7 @@
 // Imports/Packages //
 import 'package:flutter/material.dart';
 
-// Home //
+// Main //
 void main() {
   runApp(const FigmaToCodeApp());
 }
@@ -18,15 +18,15 @@ class FigmaToCodeApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: ListView(children: const [
-          AntinitsasMonastery(),
+          MunicipalTheatre(),
         ]),
       ),
     );
   }
 }
 
-class AntinitsasMonastery extends StatelessWidget {
-  const AntinitsasMonastery({super.key});
+class MunicipalTheatre extends StatelessWidget {
+  const MunicipalTheatre({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class AntinitsasMonastery extends StatelessWidget {
       children: [
         Container(
           width: 375,
-          height: 998,
+          height: 891,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             gradient: const LinearGradient(
@@ -50,14 +50,14 @@ class AntinitsasMonastery extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
-                left: 3,
-                top: 6,
+                left: -2,
+                top: 0,
                 child: Container(
-                  width: 360,
+                  width: 376,
                   height: 288,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/360x288"),
+                      image: NetworkImage("https://via.placeholder.com/376x288"),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -68,7 +68,7 @@ class AntinitsasMonastery extends StatelessWidget {
                 top: 251,
                 child: Container(
                   width: 353,
-                  height: 735,
+                  height: 640,
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -78,33 +78,95 @@ class AntinitsasMonastery extends StatelessWidget {
                 ),
               ),
               const Positioned(
-                left: 29,
-                top: 451,
+                left: 27,
+                top: 448,
                 child: SizedBox(
-                  width: 313,
-                  height: 487,
+                  height: 408,
                   child: Stack(
                     children: [
                       Positioned(
                         left: 0,
-                        top: 37,
+                        top: 40,
                         child: SizedBox(
-                          width: 313,
-                          height: 450,
-                          child: Text(
-                            'The Antinitsis Monastery is considered one of the oldest monasteries in the region and there is no exact date of its foundation, it was completely destroyed on June 13, 1944, Tuesday, by the occupying forces along with the neighboring sanatorium. Its reconstruction began at the end of 1960 and took its current form under Abbot Agathonikos in the 1990s. Its current catholicon is a copy of the old, Athonian type, tetragonal cruciform with a dome\n\nAccording to local tradition, the monastery was founded by two refugees (clergy or laymen) from the city of Aydinio in Asia Minor when the massacres began in their city, who brought with them the miraculous icon of the Virgin Mary of Aydinio. According to one opinion, the name of the monastery is due to this fact and the corruption of the word Aidinio. According to a second version the name Antinitsa is due to the name of the old town of Antina where in ancient times there was a sanctuary in honor of the goddess Artemis. Another version (because of the ending which means small) leads us to the Slavic language, where the word Antinitsa means unit.',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w300,
-                              height: 0,
-                            ),
+                          width: 337,
+                          height: 368,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 347,
+                                child: SizedBox(
+                                  width: 337,
+                                  height: 21,
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        left: 323,
+                                        top: 3,
+                                        child: SizedBox(
+                                          width: 14,
+                                          height: 13.28,
+                                          child: Stack(),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 0,
+                                        top: 0,
+                                        child: Text.rich(
+                                          TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: 'Visit Website: ',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 14,
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.w600,
+                                                  height: 0,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: 'https://www.dipetheroumelis.gr/',
+                                                style: TextStyle(
+                                                  color: Color(0xFF4285F4),
+                                                  fontSize: 14,
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.w300,
+                                                  height: 0,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 2,
+                                top: 0,
+                                child: SizedBox(
+                                  width: 313,
+                                  height: 332,
+                                  child: Text(
+                                    'The Municipal Theater of Lamia was designed by a great architect Kimonas Laskaris and was inaugurated during the mayorship of I. Papasiopoulos.\n\nIt is a jewel and a point of reference in the cultural life of the city.\n\nThe imposing marble theater was inaugurated in December 1961, while on October 20, 2010, the fully renovated and upgraded municipal theater was inaugurated.\n\n',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w300,
+                                      height: 0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                       Positioned(
-                        left: 3,
+                        left: 0,
                         top: 0,
                         child: Text(
                           'Description',
@@ -224,14 +286,14 @@ class AntinitsasMonastery extends StatelessWidget {
                 left: 38,
                 top: 372,
                 child: SizedBox(
-                  width: 127.65,
+                  width: 128.65,
                   child: Stack(
                     children: [
                       Positioned(
                         left: 0,
                         top: 0,
                         child: Text(
-                          '4.4',
+                          '4.5',
                           style: TextStyle(
                             color: Color(0xFF6F7789),
                             fontSize: 14,
@@ -242,11 +304,11 @@ class AntinitsasMonastery extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 32,
-                        top: 2,
+                        left: 33,
+                        top: 3,
                         child: SizedBox(
                           width: 95.65,
-                          height: 13.61,
+                          height: 12.15,
                           child: Stack(),
                         ),
                       ),
@@ -263,7 +325,7 @@ class AntinitsasMonastery extends StatelessWidget {
                       left: 41,
                       top: 5,
                       child: Text(
-                        'Antinitsis’ Monastery',
+                        'Ypsilantou 24',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 14,
@@ -298,7 +360,7 @@ class AntinitsasMonastery extends StatelessWidget {
                 left: 27,
                 top: 279,
                 child: Text(
-                  'Holy Monastery of Antinitsa',
+                  'Municipal Theatre',
                   style: TextStyle(
                     color: Color(0xFF121212),
                     fontSize: 18,

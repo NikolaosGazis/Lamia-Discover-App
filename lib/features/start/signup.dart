@@ -1,9 +1,11 @@
 // Imports/Packages //
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart'; // Import this for gesture recognizers
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:lamia_discover/main.dart';
+import 'profilecustomization.dart';
+import 'signin.dart';
 
 // Main //
 void main() {
@@ -75,7 +77,7 @@ class SignUp extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FirstPage()),
+                      MaterialPageRoute(builder: (context) => const FirstPage()),
                     );
                   },
                   child: Image.asset("assets/images/Start/BackArrow.png"),
@@ -89,14 +91,14 @@ class SignUp extends StatelessWidget {
                   height: 210,
                   child: Stack(
                     children: [
-                      const Positioned(
+                      Positioned(
                         left: 51,
                         top: 185,
                         child: SizedBox(
                           width: 244,
                           height: 25,
                           child: DefaultTextStyle(
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 15,
                               fontFamily: 'Poppins',
@@ -104,12 +106,12 @@ class SignUp extends StatelessWidget {
                               height: 0.11,
                             ),
                             child: Text.rich(
-                              TextSpan(
-                                children: [
                                   TextSpan(
+                                  children: [
+                                  const TextSpan(
                                     text: 'Already have an account?',
                                   ),
-                                  TextSpan(
+                                  const TextSpan(
                                     text: '  ',
                                     style: TextStyle(
                                       color: Color(0xFF110C26),
@@ -117,9 +119,18 @@ class SignUp extends StatelessWidget {
                                   ),
                                   TextSpan(
                                     text: 'Sign In',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Color(0xFF46238C),
                                     ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const SignIn(),
+                                          ),
+                                        );
+                                      },
                                   ),
                                 ],
                               ),
@@ -189,7 +200,9 @@ class SignUp extends StatelessWidget {
                         left: 345,
                         top: 17,
                         child: Transform(
-                          transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(3.14),
+                          transform: Matrix4.identity()
+                            ..translate(0.0, 0.0)
+                            ..rotateZ(3.14),
                           child: Container(
                             width: 150,
                             decoration: const ShapeDecoration(
@@ -224,7 +237,9 @@ class SignUp extends StatelessWidget {
                         left: 150,
                         top: 17,
                         child: Transform(
-                          transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(3.14),
+                          transform: Matrix4.identity()
+                            ..translate(0.0, 0.0)
+                            ..rotateZ(3.14),
                           child: Container(
                             width: 150,
                             decoration: const ShapeDecoration(
@@ -254,41 +269,51 @@ class SignUp extends StatelessWidget {
                       Positioned(
                         left: 64,
                         top: 323,
-                        child: Container(
-                          width: 200,
-                          height: 50,
-                          padding: const EdgeInsets.symmetric(horizontal: 60),
-                          decoration: ShapeDecoration(
-                            color: const Color(0xFF46238C),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40),
-                            ),
-                            shadows: const [
-                              BoxShadow(
-                                color: Color(0x3F000000),
-                                blurRadius: 4,
-                                offset: Offset(0, 4),
-                                spreadRadius: 0,
-                              )
-                            ],
-                          ),
-                          child: const Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Sign Up',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  decoration: TextDecoration.none,
-                                  fontSize: 20,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0.07,
-                                ),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ProfileCustomization(),
                               ),
-                            ],
+                            );
+                          },
+                          child: Container(
+                            width: 200,
+                            height: 50,
+                            padding: const EdgeInsets.symmetric(horizontal: 60),
+                            decoration: ShapeDecoration(
+                              color: const Color(0xFF46238C),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40),
+                              ),
+                              shadows: const [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                )
+                              ],
+                            ),
+                            child: const Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    decoration: TextDecoration.none,
+                                    fontSize: 20,
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w500,
+                                    height: 0.07,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -301,36 +326,102 @@ class SignUp extends StatelessWidget {
                           child: Stack(
                             children: [
                               Positioned(
-                                left: 0,
-                                top: 0,
-                                child: Container(
-                                  width: 327,
-                                  height: 40,
-                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                  decoration: ShapeDecoration(
-                                    color: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                      side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
-                                      borderRadius: BorderRadius.circular(100),
+                                left: 64,
+                                top: 323,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const ProfileCustomization(),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 200,
+                                    height: 50,
+                                    padding: const EdgeInsets.symmetric(horizontal: 60),
+                                    decoration: ShapeDecoration(
+                                      color: const Color(0xFF46238C),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(40),
+                                      ),
+                                      shadows: const [
+                                        BoxShadow(
+                                          color: Color(0x3F000000),
+                                          blurRadius: 4,
+                                          offset: Offset(0, 4),
+                                          spreadRadius: 0,
+                                        )
+                                      ],
+                                    ),
+                                    child: const Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Sign Up',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            decoration: TextDecoration.none,
+                                            fontSize: 20,
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w500,
+                                            height: 0.07,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  child: const Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                ),
+                              ),
+                              Positioned(
+                                left: 0,
+                                top: 265,
+                                child: SizedBox(
+                                  width: 327,
+                                  height: 40,
+                                  child: Stack(
                                     children: [
-                                      Expanded(
-                                        child: SizedBox(
-                                          child: Text(
-                                            'Password',
-                                            style: TextStyle(
-                                              color: Color(0xFF828282),
-                                              decoration: TextDecoration.none,
-                                              fontSize: 14,
-                                              fontFamily: 'Poppins',
-                                              fontWeight: FontWeight.w400,
-                                              height: 0.10,
+                                      Positioned(
+                                        left: 0,
+                                        top: 0,
+                                        child: Container(
+                                          width: 327,
+                                          height: 40,
+                                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                          decoration: ShapeDecoration(
+                                            color: Colors.white,
+                                            shape: RoundedRectangleBorder(
+                                              side: const BorderSide(
+                                                width: 1,
+                                                color: Color(0xFFE0E0E0),
+                                              ),
+                                              borderRadius: BorderRadius.circular(100),
                                             ),
+                                          ),
+                                          child: const Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            children: [
+                                              Expanded(
+                                                child: SizedBox(
+                                                  child: Text(
+                                                    'Password',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF828282),
+                                                      decoration: TextDecoration.none,
+                                                      fontSize: 14,
+                                                      fontFamily: 'Poppins',
+                                                      fontWeight: FontWeight.w400,
+                                                      height: 0.10,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -352,7 +443,10 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(
+                                width: 1,
+                                color: Color(0xFFE0E0E0),
+                              ),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
@@ -390,7 +484,10 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(
+                                width: 1,
+                                color: Color(0xFFE0E0E0),
+                              ),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
@@ -428,7 +525,10 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(
+                                width: 1,
+                                color: Color(0xFFE0E0E0),
+                              ),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
@@ -466,7 +566,10 @@ class SignUp extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
-                              side: const BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                              side: const BorderSide(
+                                width: 1,
+                                color: Color(0xFFE0E0E0),
+                              ),
                               borderRadius: BorderRadius.circular(100),
                             ),
                           ),
