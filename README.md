@@ -27,7 +27,7 @@ the city’s legacy, traditions and sights.
 ## How to Install
 
 ### Prerequisites 
-- [Flutter]([url](https://flutter.dev/docs/get-started/install)) that must be installed in your computer. 
+- [Flutter](https://flutter.dev/docs/get-started/install) that must be installed in your computer. 
 - Android Studio or any IDE that implements Flutter development tools is preferred.
 
 ### Steps 
@@ -58,4 +58,4 @@ The following were a help in the project: [@Gumeq](https://github.com/Gumeq).
 Every attempt to better the state of the project is welcoming, as well as suggestions.
 
 ### Licence
-This project is licenced under the [MIT Licence]([url](https://github.com/NikolaosGazis/Lamia-Discover-App?tab=MIT-1-ov-file)).
+This project is licenced under the [MIT Licence](https://github.com/NikolaosGazis/Lamia-Discover-App?tab=MIT-1-ov-file).
