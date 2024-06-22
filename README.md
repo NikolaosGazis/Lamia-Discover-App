@@ -52,7 +52,7 @@ flutter run
 - Either open it in the Android Studio IDE or an Android emulator.
 
 ## Collaborators
-The following were a help in the project: [@Gumeq]([url](https://github.com/Gumeq)).
+The following were a help in the project: [@Gumeq](https://github.com/Gumeq).
 
 ## Contributing
 Every attempt to better the state of the project is welcoming, as well as suggestions.
