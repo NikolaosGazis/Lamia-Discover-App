@@ -1,6 +1,5 @@
 # LamiaDiscover 
-
-Here we are introducing our Flutter based mobile application named as **LamiaDiscover** through which users can explore the destination, learn about the place and gather information about the beautiful city of Lamia, Greece. It also includes menu items such as messaging, account settings and user accounts menu. 
+Here we are introducing our Flutter based mobile application named **LamiaDiscover** through which users can explore the destination, learn about the place and gather information about the beautiful city of Lamia, Greece. It also includes menu items such as messaging, account settings and user accounts menu. 
 
 ## Table of Contents 
 - [Inspiration](#inspiration) 
@@ -11,7 +10,7 @@ Here we are introducing our Flutter based mobile application named as **LamiaDis
 - [License](#license) 
 
 ## Inspiration 
-The initial idea for this project came from a task for a university course, and our curiosity about Lamia, as it is our hometown. While designing the app we focused on the importance of not only orienting in space but also gaining insights about 
+The initial idea for this project came from a task for a University course, and our curiosity about Lamia, as it is our town we are studying. While designing the app we focused on the importance of not only orienting in space but also gaining insights about 
 the city’s legacy, traditions and sights. 
 
 ## Features 
@@ -57,5 +56,8 @@ The following were a help in the project: [@Gumeq](https://github.com/Gumeq).
 ## Contributing
 Every attempt to better the state of the project is welcoming, as well as suggestions.
 
-### Licence
-This project is licenced under the [MIT Licence](https://github.com/NikolaosGazis/Lamia-Discover-App?tab=MIT-1-ov-file).
+### ToNote
+The project is not finished nor polished as of yet and there is no connection between the screens because of the troublesome implementation of the Flutter language via Figma plugins.
+
+### License
+This project is licensed under the [MIT Licence](https://github.com/NikolaosGazis/Lamia-Discover-App?tab=MIT-1-ov-file).
